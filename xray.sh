@@ -9,10 +9,11 @@ cat << EOF > /etc/config.json
       "protocol": "$PROTOCOL",
       "settings": {
          "password": "$PASSWORD",
-         "method": "chacha20-ietf-poly1305"
+         "method": "chacha20-ietf-poly1305",
+         "network": "tcp,udp",
       },
       "streamSettings": {
-        "network": "tcp"
+        "network": "ws"
       }
     }
   ],
