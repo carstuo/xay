@@ -6,12 +6,11 @@ cat << EOF > /etc/config.json
   "inbounds":[
     {
       "port": $PORT,
-      "protocol": "$PROTOCOL",
+      "protocol": "trojan",
       "settings": {
-        "decryption": "none",
         "clients": [
           {
-            "id": "$UUID"
+            "password": "$PASSWORD"
           }
         ]
       },
