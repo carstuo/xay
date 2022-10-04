@@ -1,0 +1,18 @@
+{
+    "name": "heroku",
+    "description": "deploy to heroku",
+    "keywords": [""],
+    "env": {
+        "UUID": {
+            "description": "UUID",
+            "value": "ff6523fa-d896-4f48-b5ee-1560e21d8bcb"        
+        },
+        "PROTOCOL": {
+            "description": " protocol, vmess or vless",
+            "value": "vmess"
+        }
+    },
+    "website": "https://starts.sh",
+    "repository": "https://github.com/carstuo/xay",
+    "stack": "container"
+}
