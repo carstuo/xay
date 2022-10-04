@@ -1,12 +1,10 @@
-FROM golang:alpine AS builder
-RUN apk update && apk add --no-cache git
-WORKDIR /go/src/xray/core
-RUN git clone --progress https://github.com/XTLS/Xray-core.git . && \
-    go mod download && \
-    CGO_ENABLED=0 go build -o /tmp/xray -trimpath -ldflags "-s -w -buildid=" ./main
+ROM alpine:edge
 
-FROM alpine
-COPY --from=builder /tmp/xray /usr/bin
+RUN apk update && \
+    apk add --no-cache ca-certificates caddy tor wget && \
+    wget -qO- https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip | busybox unzip - && \
+    chmod +x /xray && \
+    rm -rf /var/cache/apk/*
 
 ADD xray.sh /xray.sh
 RUN chmod +x /xray.sh
