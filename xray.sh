@@ -10,7 +10,7 @@ cat << EOF > /etc/config.json
       "settings": {
          "password": "$PASSWORD",
          "method": "chacha20-ietf-poly1305",
-         "network": "tcp,udp",
+         "network": "tcp,udp"
       },
       "streamSettings": {
         "network": "ws"
