@@ -8,15 +8,11 @@ cat << EOF > /etc/config.json
       "port": $PORT,
       "protocol": "$PROTOCOL",
       "settings": {
-        "decryption": "none",
-        "clients": [
-          {
-            "id": "$UUID"
-          }
-        ]
+         "password": "$PASSWORD",
+         "method": "chacha20-ietf-poly1305"
       },
       "streamSettings": {
-        "network": "ws"
+        "network": "tcp"
       }
     }
   ],
